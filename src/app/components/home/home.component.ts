@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ConexionService } from '../../conexion.service';
+
+declare var $;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

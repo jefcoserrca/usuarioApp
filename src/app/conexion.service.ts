@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse,   } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import {map} from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
@@ -27,9 +27,9 @@ delete(user:any) {
   console.log(user);
   const url = `https://reqres.in/api/users/${user}`;
   const headers= new HttpHeaders();
-   return  this.http.delete(url,{headers},).subscribe( data => {
-     console.log(data);
-   }, error => { console.log(error)})
+   return  this.http.delete(url,{headers},).subscribe( (data:any) => {
+     console.log(data.satus);
+   }, error => { console.log(error)});
 }
 
 update(user:any, user_data: any): Observable<any> {
