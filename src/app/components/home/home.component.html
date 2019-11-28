@@ -5,7 +5,7 @@
 
 <div class="row ml-2" *ngIf="this.data">
 
-  <div class="col" *ngFor="let user of this.data">
+  <div class="col" *ngFor="let user of this.data; let i = index">
 
   <div class="card" style="width: 18rem;">
     <img [src]="user.avatar" class="card-img-top" alt="...">
@@ -30,7 +30,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger" (click)="buttonDelete(user.id)">Borrar</button>
+                <button type="button" class="btn btn-danger" (click)="buttonDelete(user.id, i)">Borrar</button>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ declare var $;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent  {
-data: any ;
+data: any [];
 paginas: any [] = [];
 pagina: number = 1;
 body:any;
@@ -27,9 +27,10 @@ for(let i = 1; i<=data.total; i++){
 
 
 
-buttonDelete(id:any) {
+buttonDelete(id:any, index: number) {
 console.log(id);
 this.conexion.delete(id);
+this.data.splice(index,1);
 $('#delete').modal('hide');
 }
 

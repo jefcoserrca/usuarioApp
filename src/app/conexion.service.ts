@@ -28,7 +28,7 @@ delete(user:any) {
   const url = `https://reqres.in/api/users/${user}`;
   const headers= new HttpHeaders();
    return  this.http.delete(url,{headers},).subscribe( (data:any) => {
-     console.log(data.satus);
+     console.log(data);
    }, error => { console.log(error)});
 }
 
